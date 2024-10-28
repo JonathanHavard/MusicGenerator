@@ -42,9 +42,16 @@ public class App extends PApplet {
     public void settings()
     {
         size(500, 500);
+        manager.setup();
         setupButtons();
+        addMelodyDraw();
         //in another function, setup your linked list and add it to the draws.
     }
+
+
+public void addMelodyDraw(){
+    draws.add(melody);
+}
 
     //create & add your buttons to presses & draws 
     public void setupButtons()
@@ -53,6 +60,10 @@ public class App extends PApplet {
         float centerX = width/2; 
         float centerY = height/2; 
         float spacer = 8;
+
+        PlayButton play = new PlayButton(this, melody, DXF, centerX, centerY);
+        draws.add(play);
+        presses.add(play);
     }
 
     //doing all the setup stuff for Processing
@@ -61,6 +72,11 @@ public class App extends PApplet {
     }
 
     //play the melody in real-time & draw all the buttons
+    public void addMelodyDraw(){
+        draws.add(melody);
+        draws.add(manager);
+    }
+
     public void draw()
     {
         for(Drawable drawer : draws)
@@ -76,6 +92,10 @@ public class App extends PApplet {
         {
             press.mousePressed(mouseX, mouseY);
         }
+    }
+
+    public void keyPressed(){
+        melody.start();
     }
 
 

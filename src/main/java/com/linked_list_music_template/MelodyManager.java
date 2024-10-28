@@ -54,4 +54,7 @@ void addMidiFile(String filePath) {
 void start(int index){
     players.get(index).reset();
 }
+void atEnd(int index){
+    return players.get(index).atEndOfMelody();
+}
 }
