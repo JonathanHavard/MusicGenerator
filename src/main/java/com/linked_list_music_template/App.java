@@ -34,6 +34,9 @@ public class App extends PApplet {
     //all the objects that implement a draw
     ArrayList<Drawable> draws = new ArrayList<>(); 
 
+    LinkedListMelodyManager manager = new LinkedListMelodyManager();
+    LinkedListMelody melody = new LinkedListMelody();
+
     public static void main(String[] args) {
         PApplet.main("com.linked_list_music_template.App");       
     }
@@ -48,11 +51,6 @@ public class App extends PApplet {
         //in another function, setup your linked list and add it to the draws.
     }
 
-
-public void addMelodyDraw(){
-    draws.add(melody);
-}
-
     //create & add your buttons to presses & draws 
     public void setupButtons()
     {
@@ -61,7 +59,7 @@ public void addMelodyDraw(){
         float centerY = height/2; 
         float spacer = 8;
 
-        PlayButton play = new PlayButton(this, melody, DXF, centerX, centerY);
+        PlayButton play = new PlayButton(this, melody, centerX, centerY);
         draws.add(play);
         presses.add(play);
     }
@@ -69,6 +67,12 @@ public void addMelodyDraw(){
     //doing all the setup stuff for Processing
     public void setup() {
         background(0); //defaults by drawing a black blackground but you do you.
+    }
+
+    void addNodes(){
+        for(int i=0; i<manager.size(); i++){
+            melody.insertAtEnd(new MelodyNode(manager, i));
+        }
     }
 
     //play the melody in real-time & draw all the buttons

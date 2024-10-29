@@ -5,9 +5,9 @@ import java.nio.file.FileSystems;
 
 public class LinkedListMelodyManager extends MelodyManager implements Drawable{
 
-    static FileSystem sys = FileSystem.getDefault();
-    static String prependPath = "mid" + sys.getSeparator();
-    static String appendType = ".mid" + sys.getSeparator();
+   // static FileSystem sys = FileSystem.getDefault();
+    static String prependPath = "mid/";// + sys.getSeparator(); -- Windows only due to weird error!! 
+    static String appendType = ".mid" ;
 
     String[] files = {"motive1Am", "motive2Am", "motive3Am", "motive1E", "motive2E", "motive3E"};
 

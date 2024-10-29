@@ -14,9 +14,9 @@ public class LinkedListMelody implements Drawable {
     public void draw()
     {
         //fill this in to play melody
-        play();
+       // play(); TODO: implement play and uncomment
     }
-
+    MelodyNode head;
     MelodyNode curPlayingNode = null;
     public void start(){
         if (head !=null){
@@ -35,4 +35,5 @@ public class LinkedListMelody implements Drawable {
         }
     }
 
+    //create insertAtEnd -- just like the foodnode except with melody
 }
