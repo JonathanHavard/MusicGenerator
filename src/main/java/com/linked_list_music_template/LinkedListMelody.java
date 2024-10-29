@@ -27,13 +27,34 @@ public class LinkedListMelody implements Drawable {
     public void play(){
         if(curPlayingNode!= null){
             if (curPlayingNode.atEnd()){
-            }
+            
                 curPlayingNode = curPlayingNode.getNext();
                 if (curPlayingNode!=null){
                     curPlayingNode.start();
                 }
+                //else if it's looping then start()
+            }
         }
+    }
+    public void insertAtEnd(int index){ //Inserts a node at the end of the linked list
+        if (head == null){
+            head = new MelodyNode(null, index);
+            return;
+        }
+        MelodyNode current = head;
+        while (current.nextMelodyNode != null){
+            current = current.nextMelodyNode;
+        }
+        current.nextMelodyNode = new MelodyNode(null, index);
     }
 
     //create insertAtEnd -- just like the foodnode except with melody
+    //then test the start() with the keyPressed 
+
+    //if start works -- uncomment play() in your draw function & test that
+
+    //stop -- curPLayingNode = null
+
+    //loop -- create a class variable isLooping
+
 }
