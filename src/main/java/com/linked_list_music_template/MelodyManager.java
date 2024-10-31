@@ -59,18 +59,6 @@ public class MelodyManager {
     boolean atEnd(int index){
         return players.get(index).atEndOfMelody();
     }
-    public void insertAtEnd(int index){ //Inserts a node at the end of the linked list.
-        if (head == null){
-            head = new MelodyNodeNode(food);
-            index
-            head.index = index;
-            return;
-        }
-        MelodyNode current = head;
-        while (current.nextFood != null){
-            current = current.nextFood;
-        }
-        current.nextFood = new FoodNode(food);
-    }
+
 
 }
