@@ -6,7 +6,7 @@ public class MelodyNode {
         MelodyManager melodyManager; //the melody manager with all the melody files and midi
         int whichMelody; //index into the melody manager
         MelodyNode(MelodyManager melodyManager_, int which_){
-            melodyManager_ = melodyManager;
+            melodyManager = melodyManager_;
             whichMelody = which_;
         }
 

@@ -38,7 +38,7 @@ public class App extends PApplet {
     LinkedListMelody melody = new LinkedListMelody();
 
     public static void main(String[] args) {
-        PApplet.main("com.linked_list_music_template.App");       
+        PApplet.main("com.linked_list_music_template.App");      
     }
 
     //setup stuff that should be done before Processing code is called
@@ -46,6 +46,7 @@ public class App extends PApplet {
     {
         size(500, 500);
         manager.setup();
+        addNodes();
         setupButtons();
         addMelodyDraw();
         //in another function, setup your linked list and add it to the draws.
@@ -101,9 +102,5 @@ public class App extends PApplet {
     public void keyPressed(){
         melody.start();
     }
-
-    
-
-
 }
  
