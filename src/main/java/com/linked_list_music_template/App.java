@@ -58,11 +58,23 @@ public class App extends PApplet {
         //helpful variables for formatting -- use or not. if you don't use, delete.
         float centerX = width/2; 
         float centerY = height/2; 
-        float spacer = 8;
+        float spacer = 50;
 
-        PlayButton play = new PlayButton(this, melody, centerX, centerY);
+        PlayButton play = new PlayButton(this, melody, centerX, centerY+spacer);
         draws.add(play);
         presses.add(play);
+
+        LoopButton loop = new LoopButton(this, melody, centerX, centerY);
+        draws.add(loop);
+        presses.add(loop);
+
+        StopButton stop = new StopButton(this, melody, centerX, centerY-spacer);
+        draws.add(stop);
+        presses.add(stop);
+
+        RestartButton restart = new RestartButton(this, melody, centerX, centerY - 2*spacer);
+        draws.add(restart);
+        presses.add(restart);
     }
 
     //doing all the setup stuff for Processing

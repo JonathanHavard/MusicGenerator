@@ -26,7 +26,9 @@ public class LinkedListMelody implements Drawable {
             head.start();
         }
     }
-    //function here to set looping to true or false*******************************************************************
+    void setLooping(boolean set){
+        looping = set;
+    }
 
     public void play(){
         if(curPlayingNode!= null){
@@ -35,16 +37,15 @@ public class LinkedListMelody implements Drawable {
                 if (curPlayingNode!=null){
                     curPlayingNode.start();
                 }
-                //else if it's looping then start()
+                if(looping==true){
+                    start();//needs to be debugged
+                }
             }
         }
     }
     public void insertAtEnd(MelodyNode node){ //Inserts a node at the end of the linked list
-        //MelodyNode origHead = new MelodyNode(node.melodyManager, node.whichMelody);
-        //origHead = head;
         if (head == null){
             
-            //idk if this works I'll figure it out later
             head = node;
             
             return;
@@ -57,6 +58,9 @@ public class LinkedListMelody implements Drawable {
     }
     public void stop(){
         curPlayingNode = null;
+    }
+    public void restart(){
+        
     }
 
     //loop -- create a class variable isLooping
