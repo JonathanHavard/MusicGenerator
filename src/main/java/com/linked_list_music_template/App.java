@@ -72,9 +72,13 @@ public class App extends PApplet {
         draws.add(stop);
         presses.add(stop);
 
-        RestartButton restart = new RestartButton(this, melody, centerX, centerY - 2*spacer);
-        draws.add(restart);
-        presses.add(restart);
+        WeaveButton weave = new WeaveButton(this, melody, centerY, centerY-(2*spacer));
+        draws.add(weave);
+        presses.add(weave);
+
+        // ReverseButton reverse = new ReverseButton(this, melody, centerX, centerY - 2*spacer);
+        // draws.add(reverse);
+        // presses.add(reverse);
     }
 
     //doing all the setup stuff for Processing
@@ -109,10 +113,6 @@ public class App extends PApplet {
         {
             press.mousePressed(mouseX, mouseY);
         }
-    }
-
-    public void keyPressed(){
-        melody.start();
     }
 }
  

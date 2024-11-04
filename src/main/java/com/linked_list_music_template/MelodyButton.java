@@ -30,12 +30,8 @@ class LoopButton extends MelodyButton{
     }
 
     public void onPress(){
-        if (melody.looping == false){
         melody.setLooping(true);
-        }
-        if (melody.looping == true){
-        melody.setLooping(false);
-        }
+
     }
 }
 //Stop button
@@ -47,12 +43,21 @@ class StopButton extends MelodyButton{
         melody.stop();
     }
 }
-//Restart button
-class RestartButton extends MelodyButton{
-    RestartButton(PApplet main_, LinkedListMelody melody_,float x_, float y_){
-        super(main_, melody_, "Restart", x_, y_);
+
+class WeaveButton extends MelodyButton{
+    WeaveButton(PApplet main_, LinkedListMelody melody_,float x_, float y_){
+        super(main_, melody_, "Weave", x_, y_);
     }
     public void onPress(){
-        melody.restart();
+        melody.weave(null, 3, 3);
     }
 }
+//Restart button
+// class ReverseButton extends MelodyButton{
+//     ReverseButton(PApplet main_, LinkedListMelody melody_,float x_, float y_){
+//         super(main_, melody_, "Reverse", x_, y_);
+//     }
+//     public void onPress(){
+//         melody.reverse();
+//     }
+// }

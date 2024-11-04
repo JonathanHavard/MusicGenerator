@@ -60,5 +60,4 @@ public class MelodyManager {
         return players.get(index).atEndOfMelody();
     }
 
-
 }

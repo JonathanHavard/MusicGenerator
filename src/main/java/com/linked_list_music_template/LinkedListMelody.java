@@ -59,11 +59,24 @@ public class LinkedListMelody implements Drawable {
     public void stop(){
         curPlayingNode = null;
     }
-    public void restart(){
-        
-    }
+    public void pause(){
+        for (int i=0; i<head.getMelodyIndex(); i++){
+            
 
-    //loop -- create a class variable isLooping
-                     
+        }
+    }
+    public void weave(MelodyNode node,int count, int skip){
+        int currSkip = 0;
+        int currCount = 0;
+        MelodyNode currNode = head;
+        while (currCount< count & currNode!= null){
+            if (currSkip == skip){
+                currSkip = 0;
+                currCount++;
+                insertAtEnd(currNode);
+            }
+            head = head.getNext();
+        }
+    }                
 
 }
